@@ -5,4 +5,3 @@
 ## Step 4: In the terminal type the command ---> npm install
 ## Step 5: Open terminal again and browse to server folder inside the project.
 ## Step 6: In the terminal type the command ---> npm install express mongoose morgan cors faker jsonwebtoken bcrypt-nodejs --save
-## Step 7:
