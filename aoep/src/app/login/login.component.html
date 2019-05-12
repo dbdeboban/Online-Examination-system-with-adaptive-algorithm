@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <app-message></app-message>
+  <div class="form">
+    <div class="tab-content">
+      <div id="login">
+        <h1>Welcome Back!</h1>
+
+        <form>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="email">
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="password">
+          </div>
+
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+
+          <button type="button" class="button button-block" (click)="login()" [disabled]="btnDisabled">Login</button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

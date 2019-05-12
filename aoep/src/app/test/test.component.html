@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div *ngIf="!testStarted" class="start-test">
+    <button class="button btn-blk" (click)="startTest()">Start Test</button>
+  </div>
+  <div *ngIf="testStarted" class="questions">
+    <button class="btn button-block float-right" (click)="endTest()">Submit Full Test</button>
+
+    <div class="all container-fluid">
+      <div *ngFor="let section of questionSet" class="quiz">
+        <ng-container>
+          <h5>Section {{ this.section.sectionid }}</h5>
+          <div *ngFor="let question of section.questions" class="progress">
+            <ng-container>
+              <button class="sec-btn"
+                (click)="changeQS(this.question.qid, this.section.sectionid)">{{question.qid + 1}}</button>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="allQues">
+      <div *ngFor="let section of questionSet">
+        <ng-container *ngIf="currentSec === this.section.sectionid">
+          <div *ngFor="let question of section.questions">
+            <ng-container *ngIf="currentQues === this.question.qid">
+              <ng-container *ngIf="question.givenAnswer!= -1">
+                <p class="text-success"> ** NOTE: this question is already answered and your previous answer was
+                  {{question.givenAnswer}}</p>
+              </ng-container>
+              <h2>{{question.qid +1}}. {{ question.question }} ?</h2>
+              <ng-container *ngFor="let option of question.options;let i = index">
+                <div>
+                  {{i+1}}. <input type="radio" (click)="changeSO(i)" value="i">  {{option}}
+                </div>
+              </ng-container>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <button class="btn button-block float-right my-4 mx-4" (click)="SubmitThisAnswer()"> Submit This Answer</button>
+    </div>
+  </div>
+</div>

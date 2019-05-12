@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <app-message></app-message>
+  <div class="form">
+    <div class="tab-content">
+      <div id="signup">
+        <h1>Sign Up for Free</h1>
+
+        <form>
+
+          <div class="form-group">
+            <div class="field-wrap">
+              <label>
+                Name<span class="req">*</span>
+              </label>
+              <input class="form-control" type="text" name="name" [(ngModel)]="name">
+            </div>
+          </div>
+
+          <div class="form-group field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="email">
+          </div>
+
+          <div class="form-group field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="password">
+          </div>
+
+          <button type="button" class="button button-block" (click)="register()"
+            [disabled]="btnDisabled">Register</button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

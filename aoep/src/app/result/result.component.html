@@ -1,0 +1,9 @@
+<div class="container-fluid">
+  <div class="resDiv mx-auto bg-light text-center">
+    <h1>SCORES FOR THE GIVEN EXAM:</h1>
+    <ng-container *ngFor="let sco of score; let i = index">
+      <h3>Score in section {{i+1}} : {{sco}}%</h3>
+    </ng-container>
+    <button class="btns btns-blk" (click)="goToProfile()">Go Back to Profile</button>
+  </div>
+</div>
